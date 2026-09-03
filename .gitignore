@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+docs/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Uncomment only if you intentionally do NOT want to track lock files
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
