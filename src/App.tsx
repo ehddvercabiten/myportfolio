@@ -18,7 +18,8 @@ import {
   X,
   Zap,
 } from "lucide-react";
-import { experience, profile, projects, skills } from "./data";
+import { experience, experienceQuotes, profile, projects, skills } from "./data";
+import { Experience } from "./types";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -40,6 +41,29 @@ function App() {
     window.setTimeout(() => setCopied(false), 1800);
   };
 
+  // Group visible experience items by company
+  const groupedExperience = experience
+    .filter((item) => item.visible)
+    .reduce<Record<string, Experience[]>>((groups, item) => {
+      if (!groups[item.company]) {
+        groups[item.company] = [];
+      }
+
+      groups[item.company].push(item);
+
+      return groups;
+    }, {});
+
+  // Sort roles within each company from newest to oldest
+  Object.values(groupedExperience).forEach((roles) => {
+    roles.sort((a, b) => {
+      const yearA = parseInt(a.period.split(" - ")[0], 10);
+      const yearB = parseInt(b.period.split(" - ")[0], 10);
+
+      return yearB - yearA;
+    });
+  });
+  
   return (
     <div className="site">
       <div className="noise" />
@@ -201,23 +225,117 @@ function App() {
 
         <section id="experience" className="section section-muted">
           <div className="section-label">04 — Experience</div>
+
           <div className="experience-grid">
-            <div>
-              <h2>A career built on <em>curiosity</em> and solving problems.</h2>
-              <p className="lead">From IT operations to frontend engineering and automation, every role added another layer to how I build software.</p>
+
+            {/* LEFT — Introduction + Quotes */}
+            <div className="experience-intro">
+              <div className="experience-intro-sticky">
+
+                <h2>
+                  A career built on <em>curiosity</em> and solving problems.
+                </h2>
+
+                <p className="lead">
+                  From IT operations to frontend engineering and automation, every role
+                  added another layer to how I build software.
+                </p>
+
+                <div className="experience-quotes">
+                  {experienceQuotes.map((item) => (
+                    <div className="career-quote" key={item.quote}>
+                      <span className="quote-mark">“</span>
+
+                      <blockquote>
+                        {item.quote}
+                      </blockquote>
+
+                      <span className="quote-author">
+                        — {item.attribution}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+              </div>
             </div>
-            <div className="timeline">
-              {experience.map((item) => (
-                <article className="timeline-item" key={item.role}>
-                  <div className="timeline-dot" />
-                  <div className="timeline-period">{item.period}</div>
-                  <h3>{item.role}</h3>
-                  <div className="timeline-company">{item.company}</div>
-                  <p>{item.description}</p>
-                  <ul>{item.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}</ul>
-                </article>
-              ))}
+
+
+            {/* RIGHT — Career History */}
+            <div className="experience-history">
+              {Object.entries(groupedExperience).map(([company, roles]) => {
+                const oldestRole = roles[roles.length - 1];
+                const newestRole = roles[0];
+
+                const startYear = oldestRole.period.split(" - ")[0];
+
+                const endYear = newestRole.period.includes("Present")
+                  ? "Present"
+                  : newestRole.period.split(" - ")[1];
+
+                return (
+                  <section className="company-group" key={company}>
+                    {/* Company Header */}
+                    <div className="company-header">
+                      <div>
+                        <div className="company-label">COMPANY</div>
+
+                        <h3>{company}</h3>
+                      </div>
+
+                      <div className="company-period">
+                        <em>{startYear} — {endYear}</em>
+                      </div>
+                    </div>
+
+                    {/* Career Progression */}
+                    <div className="role-timeline">
+                      {roles.map((item, index) => {
+                        const isCurrent = item.role.includes("Consultant");
+                        const isFirstRole = index === 0;
+
+                        return (
+                          <article
+                            className={`role-item ${
+                              isCurrent ? "role-item-current" : ""
+                            }`}
+                            key={`${item.role}-${item.period}`}
+                          >
+                            <div className="role-marker">
+                              <div className="timeline-dot" />
+                            </div>
+
+                            <div className="role-content">
+                              <div className="role-period">
+                                {item.period}
+                              </div>
+
+                              <h4>{item.role}</h4>
+
+                              {/* Only show description/highlights once */}
+                              {isFirstRole && (
+                                <>
+                                  <p>{item.description}</p>
+
+                                  <ul>
+                                    {item.highlights.map((highlight) => (
+                                      <li key={highlight}>
+                                        {highlight}
+                                      </li>
+                                    ))}
+                                  </ul>
+                                </>
+                              )}
+                            </div>
+                          </article>
+                        );
+                      })}
+                    </div>
+                  </section>
+                );
+              })}
             </div>
+
           </div>
         </section>
 

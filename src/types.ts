@@ -20,4 +20,5 @@ export interface Experience {
   company: string;
   description: string;
   highlights: string[];
+  visible: boolean;
 }

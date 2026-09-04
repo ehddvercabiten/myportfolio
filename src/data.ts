@@ -72,6 +72,74 @@ export const projects: Project[] = [
 
 export const experience: Experience[] = [
   {
+    period: "2026 - Present",
+    role: "Front-End Developer (Consultant)",
+    company: "Lingaro Philippines Inc.",
+    description:
+      "Delivering end-to-end front-end solutions for clients, from web design and requirement gathering through development, testing, and debugging.",
+    highlights: [
+      "Performed web design, structure, and end-to-end development using front-end libraries and frameworks.",
+      "Conducted requirement analysis and gathering to translate business needs into technical solutions.",
+      "Applied pragmatic development, testing, and debugging practices.",
+      "Built solutions grounded in OOP principles for maintainability and scalability.",
+    ],
+    visible: true,
+  },
+  {
+    period: "2024 - 2025",
+    role: "Front-End Developer (Associate Consultant)",
+    company: "Lingaro Philippines Inc.",
+    description:
+      "Delivering end-to-end front-end solutions for clients, from web design and requirement gathering through development, testing, and debugging.",
+    highlights: [
+      "Performed web design, structure, and end-to-end development using front-end libraries and frameworks.",
+      "Conducted requirement analysis and gathering to translate business needs into technical solutions.",
+      "Applied pragmatic development, testing, and debugging practices.",
+      "Built solutions grounded in OOP principles for maintainability and scalability.",
+    ],
+    visible: true,
+  },
+  {
+    period: "2022 - 2023",
+    role: "Front-End Developer",
+    company: "Lingaro Philippines Inc.",
+    description:
+      "Focused on building user-facing applications and transforming business requirements into intuitive and maintainable interfaces.",
+    highlights: [
+      "Developed responsive web interfaces using modern front-end technologies.",
+      "Collaborated with stakeholders to translate requirements into functional solutions.",
+      "Improved application usability, structure, and maintainability.",
+    ],
+    visible: true,
+  },
+  {
+    period: "2019 - 2021",
+    role: "Front End Developer",
+    company: "Collabera Technologies Private Limited Inc.",
+    description:
+      "Started my journey at Lingaro, building a strong foundation in technical support, troubleshooting, and understanding how technology supports business operations.",
+    highlights: [
+      "Provided technical support and troubleshooting for business users.",
+      "Investigated and resolved technical issues efficiently.",
+      "Developed a strong foundation in systems, applications, and IT operations.",
+    ],
+    visible: true,
+  },
+  {
+    period: "2017 - 2019",
+    role: "Software Engineer",
+    company: "ValueLine Systems & Solutions Corp.",
+    description:
+      "Designed, developed, and maintained responsive client websites, with a focus on front-end interactivity and full-stack ecommerce launches.",
+    highlights: [
+      "Designed, developed, and maintained responsive websites for clients.",
+      "Built Slider Carousels, form validation, and JS animations.",
+      "Executed full-stack website launches focused on front-end features, browser manipulation, and cross-browser compatibility.",
+      "Developed ecommerce websites using Content Management Systems (CMS).",
+    ],
+    visible: true,
+  },
+  {
     period: "5+ Years",
     role: "Frontend & Web Development",
     company: "Professional Experience",
@@ -82,6 +150,7 @@ export const experience: Experience[] = [
       "Integrated REST APIs and backend services.",
       "Implemented maintainable component and service architectures.",
     ],
+    visible: false,
   },
   {
     period: "Recent",
@@ -94,6 +163,7 @@ export const experience: Experience[] = [
       "Worked with SQL, Azure, Synapse, Spark SQL, and Power BI.",
       "Supported data ingestion and operational workflows.",
     ],
+    visible: false,
   },
   {
     period: "Earlier Career",
@@ -106,5 +176,25 @@ export const experience: Experience[] = [
       "Led teams and coordinated operational activities.",
       "Developed strong problem-solving and communication skills.",
     ],
+    visible: false,
+  },
+];
+
+export const experienceQuotes = [
+  {
+    quote: "Every role taught me something the next role needed.",
+    attribution: "Career philosophy",
+  },
+  {
+    quote: "Understand the problem before trying to solve it.",
+    attribution: "How I approach development",
+  },
+  {
+    quote: "Good software solves problems. Great software understands people.",
+    attribution: "Engineering philosophy",
+  },
+  {
+    quote: "Keep learning. Keep building. Keep improving.",
+    attribution: "Personal principle",
   },
 ];
