@@ -350,8 +350,6 @@ blockquote span { color: var(--muted); }
 .company-period {
   font-size: 0.75rem;
   white-space: nowrap;
-
-  opacity: 0.45;
 }
 
 
@@ -486,8 +484,6 @@ blockquote span { color: var(--muted); }
 
   font-size: 0.75rem;
   letter-spacing: 0.06em;
-
-  opacity: 0.45;
 }
 
 .role-content h4 {
@@ -517,12 +513,16 @@ blockquote span { color: var(--muted); }
 }
 
 .role-content li {
+  list-style-type: "—  ";
+
   margin-bottom: 0.55rem;
 
   font-size: 0.9rem;
   line-height: 1.6;
+}
 
-  opacity: 0.68;
+.role-content li::marker {
+  color: var(--accent);
 }
 
 

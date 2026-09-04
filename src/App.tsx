@@ -7,6 +7,7 @@ import {
   Code2,
   Database,
   Facebook,
+  FileUser,
   Github,
   Linkedin,
   Mail,
@@ -237,7 +238,7 @@ function App() {
                 </h2>
 
                 <p className="lead">
-                  From IT operations to frontend engineering and automation, every role
+                  From software engineering to frontend engineering and automation, every role
                   added another layer to how I build software.
                 </p>
 
@@ -307,7 +308,7 @@ function App() {
 
                             <div className="role-content">
                               <div className="role-period">
-                                {item.period}
+                                <em>{item.period}</em>
                               </div>
 
                               <h4>{item.role}</h4>
@@ -367,6 +368,7 @@ function App() {
               <a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={18} /> LinkedIn</a>
               <a href={profile.upwork} target="_blank" rel="noreferrer"><Network size={18} /> Upwork</a>
               <a href={profile.facebook} target="_blank" rel="noreferrer"><Facebook size={18} /> Facebook</a>
+              <a href={profile.onlineResume} target="_blank" rel="noreferrer"><FileUser size={18} /> Resume</a>
             </div>
           </div>
         </section>

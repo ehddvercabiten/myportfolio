@@ -13,6 +13,7 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/ehddver-cabiten",
   facebook: "https://www.facebook.com/sam32918/",
   upwork: "https://www.upwork.com/freelancers/~01c586a86de4f5ab8f",
+  onlineResume: "https://drive.google.com/file/d/1NjVg6M9NNPberncnC3GHfTBHP0znzVaM/view?usp=sharing",
   resume: "/resume.pdf",
   copyright: `© 2025 Ehddver Cabiten`,
 };
@@ -80,6 +81,7 @@ export const experience: Experience[] = [
     highlights: [
       "Performed web design, structure, and end-to-end development using front-end libraries and frameworks.",
       "Conducted requirement analysis and gathering to translate business needs into technical solutions.",
+      "Collaborated with stakeholders to translate requirements into functional solutions.",
       "Applied pragmatic development, testing, and debugging practices.",
       "Built solutions grounded in OOP principles for maintainability and scalability.",
     ],
@@ -96,6 +98,7 @@ export const experience: Experience[] = [
       "Conducted requirement analysis and gathering to translate business needs into technical solutions.",
       "Applied pragmatic development, testing, and debugging practices.",
       "Built solutions grounded in OOP principles for maintainability and scalability.",
+      
     ],
     visible: true,
   },
@@ -117,7 +120,7 @@ export const experience: Experience[] = [
     role: "Front End Developer",
     company: "Collabera Technologies Private Limited Inc.",
     description:
-      "Started my journey at Lingaro, building a strong foundation in technical support, troubleshooting, and understanding how technology supports business operations.",
+      "Started my journey at Lingaro as a contractor, building a strong foundation in technical support, troubleshooting, and understanding how technology supports business operations.",
     highlights: [
       "Provided technical support and troubleshooting for business users.",
       "Investigated and resolved technical issues efficiently.",
@@ -182,16 +185,16 @@ export const experience: Experience[] = [
 
 export const experienceQuotes = [
   {
-    quote: "Every role taught me something the next role needed.",
-    attribution: "Career philosophy",
+    quote: "Simplicity is the soul of efficiency.",
+    attribution: "Austin Freeman",
   },
   {
     quote: "Understand the problem before trying to solve it.",
     attribution: "How I approach development",
   },
   {
-    quote: "Good software solves problems. Great software understands people.",
-    attribution: "Engineering philosophy",
+    quote: "The function of good software is to make the complex appear to be simple",
+    attribution: "Grady Booch",
   },
   {
     quote: "Keep learning. Keep building. Keep improving.",
