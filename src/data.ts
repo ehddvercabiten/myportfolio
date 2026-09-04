@@ -6,24 +6,27 @@ export const profile = {
   role: "Frontend Developer",
   headline: "I turn complex ideas into simple, scalable digital experiences.",
   intro:
-    "Frontend developer with 5+ years of experience building web applications, integrating APIs, and turning business requirements into intuitive, maintainable interfaces.",
+    "Frontend developer with 7+ years of experience building web applications, integrating APIs, and turning business requirements into intuitive, maintainable interfaces.",
   location: "Philippines",
-  email: "your.email@example.com",
-  github: "https://github.com/",
-  linkedin: "https://www.linkedin.com/",
+  email: "tester.ehddver.cabiten@gmail.com",
+  github: "https://github.com/ehddvercabiten",
+  linkedin: "https://www.linkedin.com/in/ehddver-cabiten",
+  facebook: "https://www.facebook.com/sam32918/",
+  upwork: "https://www.upwork.com/freelancers/~01c586a86de4f5ab8f",
   resume: "/resume.pdf",
+  copyright: `© 2025 Ehddver Cabiten`,
 };
 
 export const skills: SkillGroup[] = [
   {
     title: "Frontend",
     description: "Modern interfaces built around reusable components and clean architecture.",
-    skills: ["React", "TypeScript", "JavaScript", "HTML5", "CSS3", "Vite", "MUI", "Responsive UI"],
+    skills: ["React", "Angular", "Vue", "TypeScript", "JavaScript", "HTML5", "CSS3", "MUI", "Responsive UI"],
   },
   {
     title: "Integration & Data",
     description: "Connecting applications with APIs, databases, services, and data platforms.",
-    skills: ["REST APIs", "Axios", "SQL", "SQL Server", "Azure", "Synapse", "Spark SQL", "Power BI"],
+    skills: ["REST APIs", "Axios", "SQL", "Databricks", "Azure", "Synapse", "Spark SQL", "Power BI"],
   },
   {
     title: "Automation",
@@ -33,7 +36,7 @@ export const skills: SkillGroup[] = [
   {
     title: "Engineering",
     description: "Patterns and practices that keep applications easier to maintain and evolve.",
-    skills: ["Git", "GitHub", "Authentication", "Server Pagination", "Repository Pattern", "Service Layer"],
+    skills: ["GitHub", "JIRA", "Authentication", "Repository", "Service Layer"],
   },
 ];
 

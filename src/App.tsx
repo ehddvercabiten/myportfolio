@@ -6,11 +6,13 @@ import {
   Check,
   Code2,
   Database,
+  Facebook,
   Github,
   Linkedin,
   Mail,
   Menu,
   Moon,
+  Network,
   Sparkles,
   Terminal,
   X,
@@ -95,7 +97,7 @@ function App() {
               <div className="orbit orbit-one" />
               <div className="orbit orbit-two" />
               <div className="code-card">
-                <div className="code-top"><i /><i /><i /><span>developer.ts</span></div>
+                <div className="code-top"><i /><i /><i /><span>developer.tsx</span></div>
                 <pre>{`const developer = {
   focus: "frontend",
   stack: [
@@ -134,7 +136,7 @@ function App() {
                 reliable solution.
               </p>
               <div className="stat-row">
-                <div><strong>5+</strong><span>Years development</span></div>
+                <div><strong>7+</strong><span>Years development</span></div>
                 <div><strong>React</strong><span>Primary frontend stack</span></div>
                 <div><strong>∞</strong><span>Curiosity to learn</span></div>
               </div>
@@ -169,23 +171,31 @@ function App() {
             <span className="project-count">{String(projects.length).padStart(2, "0")} projects</span>
           </div>
           <div className="projects">
-            {projects.map((project, index) => (
-              <article className="project-card" key={project.title}>
-                <div className="project-index">0{index + 1}</div>
-                <div className="project-main">
-                  <div className="project-top">
-                    <span>{project.category}</span>
-                    <span>{project.year}</span>
+            {projects.filter((project) => project.featured === true)
+              .map((project, index) => (
+                <article className="project-card" key={project.title}>
+                  <div className="project-index">0{index + 1}</div>
+
+                  <div className="project-main">
+                    <div className="project-top">
+                      <span>{project.category}</span>
+                      <span>{project.year}</span>
+                    </div>
+
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+
+                    <div className="tech-list">
+                      {project.technologies.map((tech) => (
+                        <span key={tech}>{tech}</span>
+                      ))}
+                    </div>
                   </div>
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <div className="tech-list">
-                    {project.technologies.map((tech) => <span key={tech}>{tech}</span>)}
-                  </div>
-                </div>
-                <ArrowUpRight className="project-arrow" size={25} />
-              </article>
-            ))}
+
+                  <ArrowUpRight className="project-arrow" size={25} />
+                </article>
+              ))
+            }
           </div>
         </section>
 
@@ -237,14 +247,16 @@ function App() {
             <div className="socials">
               <a href={profile.github} target="_blank" rel="noreferrer"><Github size={18} /> GitHub</a>
               <a href={profile.linkedin} target="_blank" rel="noreferrer"><Linkedin size={18} /> LinkedIn</a>
+              <a href={profile.upwork} target="_blank" rel="noreferrer"><Network size={18} /> Upwork</a>
+              <a href={profile.facebook} target="_blank" rel="noreferrer"><Facebook size={18} /> Facebook</a>
             </div>
           </div>
         </section>
       </main>
 
       <footer className="footer">
-        <span>© {new Date().getFullYear()} {profile.name}</span>
-        <span>Designed & built with React + TypeScript</span>
+        <span>{profile.copyright}</span>
+        <span>Designed & built with React</span>
       </footer>
     </div>
   );
