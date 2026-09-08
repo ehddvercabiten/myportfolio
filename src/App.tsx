@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   ArrowDown,
+  ArrowUp,
   ArrowUpRight,
   BriefcaseBusiness,
   Check,
@@ -12,9 +13,12 @@ import {
   Linkedin,
   Mail,
   Menu,
+  MessageCircleMore,
   Moon,
   Network,
+  ShoppingBag,
   Sparkles,
+  Store,
   Terminal,
   X,
   Zap,
@@ -26,6 +30,21 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [dark, setDark] = useState(true);
   const [copied, setCopied] = useState(false);
+
+  const [showBackToTop, setShowBackToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowBackToTop(window.scrollY > 500);
+    };
+
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     document.documentElement.dataset.theme = dark ? "dark" : "light";
@@ -80,6 +99,12 @@ function App() {
               {item}
             </button>
           ))}
+          <a href={profile.merch} target="_blank" rel="noopener noreferrer" className="hidden">
+            Merch
+          </a>
+          <a href={profile.shop} target="_blank" rel="noopener noreferrer" className="hidden">
+            Shop
+          </a>
         </nav>
 
         <div className="header-actions">
@@ -224,6 +249,70 @@ function App() {
           </div>
         </section>
 
+        <section className="section shop-section" id="shop">
+          <div className="section-heading">
+            <span className="eyebrow">SIDE VENTURE</span>
+            <h2>Something beyond code.</h2>
+            <p>
+              When I'm not building digital experiences, I also explore e-commerce
+              through my online shop.
+            </p>
+          </div>
+
+          <div className="shop-card">
+            <div className="shop-content">
+              <div className="shop-badge">
+                <ShoppingBag size={16} />
+                <span>ONLINE SHOP</span>
+              </div>
+
+              <h3>Print'ED Clothing</h3>
+
+              <p>
+                A personal online shop where I explore product sourcing, digital
+                selling, customer experience, and the business side of e-commerce.
+              </p>
+
+              <a
+                href={profile.shop}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button primary"
+              >
+                Visit My Shop
+                <ArrowUpRight size={17} />
+              </a>
+            </div>
+
+            <div className="shop-visual">
+              <a
+                href={profile.merch}
+                target="_blank"
+                rel="noopener noreferrer"
+                className=""
+                style={{ width: "100%" }}
+              >
+                <div className="shop-window">
+                  <div className="shop-window-header">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div className="shop-window-body">
+                    <Store size={52} strokeWidth={1.4} />
+                      <span>
+                        <strong>Print'ED Clothing </strong>
+                        <ArrowUpRight size={17} />
+                      </span>
+                    <small>Explore the collection</small>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section id="experience" className="section section-muted">
           <div className="section-label">04 — Experience</div>
 
@@ -358,10 +447,11 @@ function App() {
             <p>I'm open to conversations about frontend development, web applications, automation, and interesting problems worth solving.</p>
             <div className="contact-actions">
               <a className="button primary" href={`mailto:${profile.email}`}><Mail size={17} /> Email me</a>
-              <button className="button secondary" onClick={copyEmail}>
+              <button className="hidden button secondary" onClick={copyEmail}>
                 {copied ? <Check size={17} /> : <Code2 size={17} />}
                 {copied ? "Copied!" : profile.email}
               </button>
+              <a className="button primary" href={profile.whatsapp} target="_blank" rel="noreferrer"><MessageCircleMore size={17} /> Message me</a>
             </div>
             <div className="socials">
               <a href={profile.github} target="_blank" rel="noreferrer"><Github size={18} /> GitHub</a>
@@ -373,6 +463,15 @@ function App() {
           </div>
         </section>
       </main>
+
+      <button
+        className={showBackToTop ? "back-to-top visible" : "back-to-top"}
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Back to top"
+      >
+        <ArrowUp size={17} />
+        <span>Back to top</span>
+      </button>
 
       <footer className="footer">
         <span>{profile.copyright}</span>

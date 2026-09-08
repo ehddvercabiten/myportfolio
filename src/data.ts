@@ -13,6 +13,9 @@ export const profile = {
   linkedin: "https://www.linkedin.com/in/ehddver-cabiten",
   facebook: "https://www.facebook.com/sam32918/",
   upwork: "https://www.upwork.com/freelancers/~01c586a86de4f5ab8f",
+  whatsapp: "https://wa.me/ehddev",
+  merch: "https://www.facebook.com/print.ed.1122",
+  shop: "https://enstack.ph/printed-clothing",
   onlineResume: "https://drive.google.com/file/d/1NjVg6M9NNPberncnC3GHfTBHP0znzVaM/view?usp=sharing",
   resume: "/resume.pdf",
   copyright: `© 2025 Ehddver Cabiten`,
@@ -43,30 +46,84 @@ export const skills: SkillGroup[] = [
 
 export const projects: Project[] = [
   {
-    title: "The Gazette",
+    title: "Upright Publication",
     description:
       "A journalism platform concept with a public news experience and administration workflow for creating, editing, organizing, and managing articles.",
     category: "Web Application",
     year: "2026",
-    technologies: ["React", "TypeScript", "Vite", "MUI", "REST API"],
+    technologies: ["React", "TypeScript", "Vite", "MUI", "NodeJS", "PostgreSQL"],
     featured: true,
   },
   {
-    title: "Data & Automation Workflows",
+    title: "ACOM Data Harmonization",
     description:
-      "Business-oriented workflows connecting applications, data sources, Power Platform services, and reporting processes to reduce manual operations.",
+      "A data harmonization project for MARS, integrating disparate data sources, standardizing formats, and ensuring consistent and accurate data across the organization.",
+    category: "Power Platform",
+    year: "2026",
+    technologies: ["Power Apps", "Power Automate", "Databricks"],
+    featured: true,
+  },
+  {
+    title: "Performance Overview",
+    description:
+      "A team-based performance monitoring solution for iQor managers, providing visibility into individual and team performance to identify top performers, highlight areas for improvement, and support targeted coaching and development.",
     category: "Automation",
-    year: "2025–2026",
+    year: "2025",
+    technologies: ["Google Looker Studio"],
+    featured: true,
+  },
+  {
+    title: "AXA Dashboard",
+    description:
+      "A Power BI dashboarding solution for AXA, transforming business data into interactive visualizations and actionable insights to support data-driven decision-making and performance monitoring.",
+    category: "Power Platform",
+    year: "2024-2025",
+    technologies: ["Power Apps", "Power BI", "Azure"],
+    featured: true,
+  },
+  {
+    title: "DIAL (Disaster Alert)",
+    description:
+      "A disaster alert system built with Power Platform, enabling timely notifications, automated response workflows, and centralized incident management to enhance organizational preparedness and response capabilities.",
+    category: "Automation",
+    year: "2022",
+    technologies: ["Power Automate", "Power Apps", "Power BI", "SQL"],
+    featured: true,
+  },
+  {
+    title: "LEA Chatbot (Employee Assistant)",
+    description:
+      "An internal employee chatbot built with Copilot Studio and Power Virtual Agents, providing quick access to Report-to-Office services, parking reservations, frequently asked questions, and other workplace information.",
+    category: "Automation",
+    year: "2021",
+    technologies: ["Power Virtual Agent"],
+    featured: true,
+  },
+  {
+    title: "LEAP (Evaluation & Assessment Performance)",
+    description:
+      "Power platform solutions streamlining employee evaluation and performance assessment processes, enabling structured reviews, automated workflows, and centralized performance tracking.",
+    category: "Automation",
+    year: "2021",
     technologies: ["Power Automate", "Power Apps", "Power BI", "SQL", "Azure"],
     featured: true,
   },
   {
-    title: "API-Driven Frontend Architecture",
+    title: "Presentation Manager (MARS)",
     description:
-      "Reusable frontend patterns for authentication, API services, repositories, server-side pagination, typed responses, and maintainable application state.",
-    category: "Architecture",
-    year: "2026",
-    technologies: ["React", "TypeScript", "Axios", "REST API", "SQL Server"],
+      "A custom dashboarding solution for MARS, built with React to provide interactive data visualization, centralized reporting, and tailored insights without relying on Power BI.",
+    category: "Web Application",
+    year: "2020",
+    technologies: ["React", "Java", "SQL", "Azure"],
+    featured: true,
+  },
+  {
+    title: "EDI Archiving",
+    description:
+      "A dedicated project archiving solution for P&G, built with Angular and .NET to centralize project records, streamline archival processes, and provide secure and efficient access to historical project information.",
+    category: "Web Application",
+    year: "2019-2023",
+    technologies: ["Angular", "TypeScript", ".NET", "SQL", "Azure"],
     featured: true,
   },
 ];
