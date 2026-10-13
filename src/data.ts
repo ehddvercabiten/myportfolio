@@ -16,7 +16,7 @@ export const profile = {
   whatsapp: "https://wa.me/ehddev",
   merch: "https://www.facebook.com/print.ed.1122",
   shop: "https://enstack.ph/printed-clothing",
-  onlineResume: "https://drive.google.com/file/d/1NjVg6M9NNPberncnC3GHfTBHP0znzVaM/view?usp=sharing",
+  onlineResume: "https://drive.google.com/file/d/1KxSPmA1XmW1smaXstZ53lwTMKT-lP2Lx/view",
   resume: "/resume.pdf",
   copyright: `© 2025 Ehddver Cabiten`,
 };
